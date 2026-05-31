@@ -19,7 +19,7 @@ export const Route = createFileRoute("/shop")({
   validateSearch: searchSchema,
   head: () => ({
     meta: [
-      { title: "Shop — Lumière Jewelry" },
+      { title: "Shop — Solara Jewelry" },
       { name: "description", content: "Browse our full collection of modern fine jewelry." },
     ],
   }),

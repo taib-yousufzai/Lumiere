@@ -11,7 +11,7 @@ import { formatPrice } from "@/utils/format";
 type Tab = "profile" | "orders" | "wishlist" | "settings";
 
 export const Route = createFileRoute("/account")({
-  head: () => ({ meta: [{ title: "My Account — Lumière" }] }),
+  head: () => ({ meta: [{ title: "My Account — Solara" }] }),
   component: AccountPage,
 });
 

@@ -7,8 +7,8 @@ import { SiteLayout } from "@/layouts/SiteLayout";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Lumière Jewelry" },
-      { name: "description", content: "Get in touch with the Lumière team." },
+      { title: "Contact — Solara Jewelry" },
+      { name: "description", content: "Get in touch with the Solara team." },
     ],
   }),
   component: ContactPage,
@@ -36,13 +36,18 @@ function ContactPage() {
 
           <div className="mt-10 space-y-5 text-sm">
             <div className="flex items-center gap-3">
-              <FiMail className="text-[var(--gold)]" /> hello@lumiere.example
+              <FiMail className="text-[var(--gold)]" /> hello@solara.in
             </div>
             <div className="flex items-center gap-3">
-              <FiPhone className="text-[var(--gold)]" /> +1 (555) 010-4321
+              <FiPhone className="text-[var(--gold)]" /> +91 77107 14508
             </div>
-            <div className="flex items-center gap-3">
-              <FiMapPin className="text-[var(--gold)]" /> 24 Atelier Lane, NYC
+            <div className="flex items-start gap-3">
+              <FiMapPin className="mt-0.5 text-[var(--gold)]" />
+              <span>
+                C-25 sector-8 noida,<br />
+                Gautam Buddha Nagar,<br />
+                Uttar Pradesh - 20130
+              </span>
             </div>
           </div>
         </div>

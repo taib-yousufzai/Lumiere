@@ -4,7 +4,7 @@ import { SiteLayout } from "@/layouts/SiteLayout";
 import { useAuth } from "@/context/AuthContext";
 
 export const Route = createFileRoute("/login")({
-  head: () => ({ meta: [{ title: "Sign in — Lumière" }] }),
+  head: () => ({ meta: [{ title: "Sign in — Solara" }] }),
   component: LoginPage,
 });
 
@@ -54,7 +54,7 @@ function LoginPage() {
             </button>
           </form>
           <p className="mt-6 text-center text-sm text-muted-foreground">
-            New to Lumière?{" "}
+            New to Solara?{" "}
             <Link to="/register" className="text-[var(--gold)] hover:underline">
               Create an account
             </Link>

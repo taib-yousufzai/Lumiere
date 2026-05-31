@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { SiteLayout } from "@/layouts/SiteLayout";
 
 export const Route = createFileRoute("/forgot-password")({
-  head: () => ({ meta: [{ title: "Forgot Password — Lumière" }] }),
+  head: () => ({ meta: [{ title: "Forgot Password — Solara" }] }),
   component: ForgotPage,
 });
 

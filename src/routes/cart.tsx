@@ -8,7 +8,7 @@ import { formatPrice } from "@/utils/format";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/cart")({
-  head: () => ({ meta: [{ title: "Your Cart — Lumière" }] }),
+  head: () => ({ meta: [{ title: "Your Cart — Solara" }] }),
   component: CartPage,
 });
 
@@ -21,7 +21,7 @@ function CartPage() {
 
   const apply = (e: React.FormEvent) => {
     e.preventDefault();
-    if (coupon.toUpperCase() === "LUMI10") {
+    if (coupon.toUpperCase() === "SOLARA10") {
       setDiscount(subtotal * 0.1);
       toast.success("Coupon applied: 10% off");
     } else {
@@ -100,7 +100,7 @@ function CartPage() {
               <input
                 value={coupon}
                 onChange={(e) => setCoupon(e.target.value)}
-                placeholder="Promo code (try LUMI10)"
+                placeholder="Promo code (try SOLARA10)"
                 className="h-11 flex-1 rounded-l-sm border border-border bg-background px-3 text-sm outline-none focus:border-[var(--gold)]"
               />
               <button className="h-11 rounded-r-sm bg-secondary px-4 text-xs font-medium uppercase tracking-wider text-secondary-foreground hover:bg-[var(--gold)] hover:text-secondary">

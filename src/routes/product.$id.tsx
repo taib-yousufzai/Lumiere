@@ -20,7 +20,7 @@ export const Route = createFileRoute("/product/$id")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.product.name} — Lumière` },
+          { title: `${loaderData.product.name} — Solara` },
           { name: "description", content: loaderData.product.description },
           { property: "og:title", content: loaderData.product.name },
           { property: "og:image", content: loaderData.product.images[0] },
@@ -104,11 +104,11 @@ function ProductPage() {
             <div className="mt-4 grid grid-cols-4 gap-3">
               {product.images.map((src: string, i: number) => (
                 <button
-                  key={i}
-                  onClick={() => setActiveImg(i)}
-                  className={`aspect-square overflow-hidden rounded-md border-2 transition ${
-                    activeImg === i ? "border-[var(--gold)]" : "border-transparent"
-                  }`}
+                   key={i}
+                   onClick={() => setActiveImg(i)}
+                   className={`aspect-square overflow-hidden rounded-md border-2 transition ${
+                     activeImg === i ? "border-[var(--gold)]" : "border-transparent"
+                   }`}
                 >
                   <img src={src} alt="" className="h-full w-full object-cover" />
                 </button>
@@ -268,7 +268,7 @@ function ReviewSection({
   rating: number;
   count: number;
 }) {
-  const KEY = `lj_reviews_${productId}`;
+  const KEY = `solara_reviews_${productId}`;
   const [list, setList] = useState<{ name: string; rating: number; text: string; date: string }[]>(
     () => {
       try {

@@ -38,6 +38,47 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
+    // Check for import_order query parameter to load shared orders
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const importParam = params.get("import_order");
+      if (importParam) {
+        const parsed = JSON.parse(decodeURIComponent(importParam));
+        if (Array.isArray(parsed)) {
+          import("@/data/products").then(({ PRODUCTS }) => {
+            const newItems = parsed
+              .map((item: { id: string; q: number }) => {
+                const prod = PRODUCTS.find((p) => p.id === item.id);
+                if (prod) {
+                  return {
+                    id: prod.id,
+                    name: prod.name,
+                    price: prod.discountPrice ?? prod.price,
+                    image: prod.images[0],
+                    quantity: item.q,
+                  };
+                }
+                return null;
+              })
+              .filter(Boolean) as CartItem[];
+
+            if (newItems.length > 0) {
+              setItems(newItems);
+              setDrawerOpen(true);
+              toast.success("Loaded order items into cart");
+              const url = new URL(window.location.href);
+              url.searchParams.delete("import_order");
+              window.history.replaceState({}, "", url.toString());
+            }
+          });
+        }
+      }
+    } catch (e) {
+      console.error("Failed to import order", e);
+    }
+  }, []);
+
+  useEffect(() => {
     localStorage.setItem(KEY, JSON.stringify(items));
   }, [items]);
 

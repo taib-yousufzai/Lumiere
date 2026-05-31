@@ -9,7 +9,7 @@ import { formatPrice } from "@/utils/format";
 import { RatingStars } from "@/components/RatingStars";
 
 export const Route = createFileRoute("/wishlist")({
-  head: () => ({ meta: [{ title: "Your Wishlist — Lumière" }] }),
+  head: () => ({ meta: [{ title: "Your Wishlist — Solara" }] }),
   component: WishPage,
 });
 

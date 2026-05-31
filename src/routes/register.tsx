@@ -4,7 +4,7 @@ import { SiteLayout } from "@/layouts/SiteLayout";
 import { useAuth } from "@/context/AuthContext";
 
 export const Route = createFileRoute("/register")({
-  head: () => ({ meta: [{ title: "Create account — Lumière" }] }),
+  head: () => ({ meta: [{ title: "Create account — Solara" }] }),
   component: RegisterPage,
 });
 
@@ -26,7 +26,7 @@ function RegisterPage() {
         <div className="mx-auto w-full max-w-md self-center">
           <h1 className="font-display text-4xl text-secondary">Create your account</h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            Join Lumière and enjoy 10% off your first order.
+            Join Solara and enjoy 10% off your first order.
           </p>
           <form onSubmit={submit} className="mt-8 space-y-4">
             <F label="Full name" value={name} onChange={setName} required />

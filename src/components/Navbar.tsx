@@ -70,7 +70,7 @@ export function Navbar() {
           </button>
 
           <Link to="/" className="font-display text-2xl font-semibold tracking-wide text-secondary">
-            Lumière<span className="text-[var(--gold)]">.</span>
+            Solara<span className="text-[var(--gold)]">.</span>
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">

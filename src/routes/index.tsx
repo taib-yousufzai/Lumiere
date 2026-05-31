@@ -15,13 +15,13 @@ import { CATEGORIES, PRODUCTS, REVIEWS } from "@/data/products";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Lumière — Modern Fine Jewelry, Made Everyday" },
+      { title: "Solara — Modern Fine Jewelry, Made Everyday" },
       {
         name: "description",
         content:
           "Premium-feel, affordable jewelry. Shop rings, necklaces, earrings, bracelets, anklets and men's pieces.",
       },
-      { property: "og:title", content: "Lumière — Modern Fine Jewelry" },
+      { property: "og:title", content: "Solara — Modern Fine Jewelry" },
       { property: "og:description", content: "Premium-feel, affordable jewelry for every day." },
     ],
   }),
@@ -86,7 +86,7 @@ function HomePage() {
           >
             <img
               src={HERO}
-              alt="Model wearing Lumière jewelry"
+              alt="Model wearing Solara jewelry"
               className="h-full w-full object-cover"
             />
             <div className="absolute bottom-6 left-6 rounded-md bg-background/95 p-4 shadow-soft backdrop-blur">
@@ -241,7 +241,7 @@ function HomePage() {
       <section className="container-px mx-auto max-w-7xl py-20">
         <div className="mb-8 text-center">
           <span className="text-xs uppercase tracking-[0.25em] text-[var(--gold)]">
-            @lumiere.jewelry
+            @solara.jewelry
           </span>
           <h2 className="mt-2 font-display text-3xl text-secondary md:text-4xl">
             As seen on Instagram

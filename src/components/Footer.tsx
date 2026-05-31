@@ -15,7 +15,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link to="/" className="font-display text-2xl font-semibold text-secondary">
-              Lumière<span className="text-[var(--gold)]">.</span>
+              Solara<span className="text-[var(--gold)]">.</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               Modern, everyday fine jewelry. Designed to be worn, loved, and layered.
@@ -33,6 +33,18 @@ export function Footer() {
               <a href="#" aria-label="YouTube" className="hover:text-[var(--gold)]">
                 <FiYoutube />
               </a>
+            </div>
+            <div className="mt-6 space-y-2 border-t border-border pt-6 text-xs text-muted-foreground">
+              <p><span className="font-medium text-secondary">Company Name:</span> solara India</p>
+              <p><span className="font-medium text-secondary">GST:</span> 09ABRCS5093E1ZS</p>
+              <p>
+                <span className="font-medium text-secondary">Address:</span><br />
+                C-25 sector-8 noida<br />
+                Gautam Buddha Nagar<br />
+                Uttar Pradesh<br />
+                Noida-20130
+              </p>
+              <p><span className="font-medium text-secondary">Mobile Number:</span> +91 77107 14508</p>
             </div>
           </div>
 
@@ -137,7 +149,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row">
-          <p>© {new Date().getFullYear()} Lumière Jewelry. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Solara India. All rights reserved.</p>
           <p>Crafted with care · Hypoallergenic · Tarnish resistant</p>
         </div>
       </div>
