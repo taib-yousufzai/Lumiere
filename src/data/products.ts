@@ -20,29 +20,14 @@ export interface Product {
   createdAt: string;
 }
 
-// Unsplash jewelry image pool (lifestyle + product). Reused/rotated per product.
-const IMG = [
-  "/images/ring_gold.png",
-  "/images/necklace_gold.png",
-  "/images/earrings_pearl.png",
-  "/images/bracelet_diamond.png",
-  "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=900&q=80",
-  "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=900&q=80",
-  "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=900&q=80",
-  "https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=900&q=80",
-  "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=900&q=80",
-  "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=900&q=80",
-  "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=900&q=80",
-  "https://images.unsplash.com/photo-1620656798932-902f3f3683b1?w=900&q=80",
-  "https://images.unsplash.com/photo-1561591128-8b4ee99e8af3?w=900&q=80",
-  "https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=900&q=80",
-  "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=900&q=80",
-  "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=900&q=80",
-  "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=900&q=80",
-  "https://images.unsplash.com/photo-1612863730159-c3c8b1eedf72?w=900&q=80",
-  "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=900&q=80",
-  "https://images.unsplash.com/photo-1531995811006-35cb42e1a022?w=900&q=80",
-];
+const CATEGORY_IMAGES: Record<Category, string[]> = {
+  rings: ["/images/ring_gold.png", "/images/ring_silver.png"],
+  necklaces: ["/images/necklace_gold.png", "/images/necklace_silver.png"],
+  earrings: ["/images/earrings_pearl.png", "/images/earrings_hoops.png"],
+  bracelets: ["/images/bracelet_diamond.png", "/images/bracelet_gold.png"],
+  anklets: ["/images/bracelet_diamond.png", "/images/bracelet_gold.png"],
+  mens: ["/images/ring_silver.png", "/images/necklace_silver.png", "/images/bracelet_gold.png"],
+};
 
 const CATEGORY_META: Record<Category, { label: string; names: string[]; materials: string[] }> = {
   rings: {
@@ -169,12 +154,12 @@ function makeProducts(): Product[] {
       const price = Math.round((25 + r() * 175) * 100) / 100;
       const hasDiscount = r() > 0.55;
       const discount = hasDiscount ? Math.round(price * (0.7 + r() * 0.2) * 100) / 100 : undefined;
-      const imgStart = Math.floor(r() * IMG.length);
+      const catImgs = CATEGORY_IMAGES[cat];
       const images = [
-        IMG[imgStart % IMG.length],
-        IMG[(imgStart + 3) % IMG.length],
-        IMG[(imgStart + 6) % IMG.length],
-        IMG[(imgStart + 9) % IMG.length],
+        catImgs[i % catImgs.length],
+        catImgs[(i + 1) % catImgs.length],
+        catImgs[i % catImgs.length],
+        catImgs[(i + 1) % catImgs.length],
       ];
       out.push({
         id: String(id),
@@ -204,12 +189,12 @@ function makeProducts(): Product[] {
 export const PRODUCTS: Product[] = makeProducts();
 
 export const CATEGORIES: { id: Category; label: string; image: string }[] = [
-  { id: "rings", label: "Rings", image: IMG[2] },
-  { id: "necklaces", label: "Necklaces", image: IMG[0] },
-  { id: "earrings", label: "Earrings", image: IMG[5] },
-  { id: "bracelets", label: "Bracelets", image: IMG[7] },
-  { id: "anklets", label: "Anklets", image: IMG[9] },
-  { id: "mens", label: "Men's", image: IMG[11] },
+  { id: "rings", label: "Rings", image: "/images/ring_gold.png" },
+  { id: "necklaces", label: "Necklaces", image: "/images/necklace_gold.png" },
+  { id: "earrings", label: "Earrings", image: "/images/earrings_pearl.png" },
+  { id: "bracelets", label: "Bracelets", image: "/images/bracelet_diamond.png" },
+  { id: "anklets", label: "Anklets", image: "/images/bracelet_gold.png" },
+  { id: "mens", label: "Men's", image: "/images/ring_silver.png" },
 ];
 
 export const REVIEWS = [

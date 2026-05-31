@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const HERO = "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=1600&q=80";
+const HERO = "/images/ring_gold.png";
 
 function HomePage() {
   const trending = PRODUCTS.filter((p) => p.featured).slice(0, 8);
@@ -178,7 +178,7 @@ function HomePage() {
           </div>
           <div className="aspect-square md:aspect-auto">
             <img
-              src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200&q=80"
+              src="/images/necklace_gold.png"
               alt="Gift edit"
               loading="lazy"
               className="h-full w-full object-cover"
