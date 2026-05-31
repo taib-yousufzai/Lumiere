@@ -22,6 +22,10 @@ export interface Product {
 
 // Unsplash jewelry image pool (lifestyle + product). Reused/rotated per product.
 const IMG = [
+  "/images/ring_gold.png",
+  "/images/necklace_gold.png",
+  "/images/earrings_pearl.png",
+  "/images/bracelet_diamond.png",
   "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=900&q=80",
   "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=900&q=80",
   "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=900&q=80",
